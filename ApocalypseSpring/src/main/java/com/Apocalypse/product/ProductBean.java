@@ -15,7 +15,7 @@ public class ProductBean {
 	}
 
 	public ProductBean(Integer productId, String producName, Integer  price, String productDesc) {
-		super();
+		
 		this.productId = productId;
 		this.producName = producName;
 		this.price = price;
