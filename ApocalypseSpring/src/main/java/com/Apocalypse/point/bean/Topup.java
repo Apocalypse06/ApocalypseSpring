@@ -1,26 +1,26 @@
-package com.Apocalypse.product;
+package com.Apocalypse.point.bean;
 
 import java.sql.Timestamp;
 
-public class PointTransation {
+public class Topup {
 
 	private int id;
 	private String member_Id;
 	private String transationType;
 	private int cash;
-	private int newBalance;
+	private int newPoints;
 	private String token;
 	private Timestamp time;
-	public PointTransation() {
+	public Topup() {
 		super();
 	}
-	public PointTransation(int id, String member_Id, String transationType, int cash, int newBalance, String token) {
+	public Topup(int id, String member_Id, String transationType, int cash, int newPoints, String token) {
 		
 		this.id = id;
 		this.member_Id = member_Id;
 		this.transationType = transationType;
 		this.cash = cash;
-		this.newBalance = newBalance;
+		this.newPoints = newPoints;
 		this.token = token;
 	}
 	public int getId() {
@@ -47,11 +47,11 @@ public class PointTransation {
 	public void setCash(int cash) {
 		this.cash = cash;
 	}
-	public int getNewBalance() {
-		return newBalance;
+	public int getnewPoints() {
+		return newPoints;
 	}
-	public void setNewBalance(int newBalance) {
-		this.newBalance = newBalance;
+	public void setnewPoints(int newPoints) {
+		this.newPoints = newPoints;
 	}
 	public String getToken() {
 		return token;

@@ -1,4 +1,4 @@
-package com.Apocalypse.member;
+package com.Apocalypse.member.bean;
 
 import java.io.Serializable;
 import java.sql.Blob;

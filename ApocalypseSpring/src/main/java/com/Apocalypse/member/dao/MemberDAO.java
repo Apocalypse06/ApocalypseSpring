@@ -1,4 +1,4 @@
-package com.Apocalypse.member;
+package com.Apocalypse.member.dao;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -17,6 +17,7 @@ import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.springframework.stereotype.Repository;
 
 import com.Apocalypse.core.dao.GenericDaoJdbc;
+import com.Apocalypse.member.bean.MemberBean;
 
 @Repository
 public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao {
@@ -28,10 +29,7 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	
 	@Override
 	public MemberBean select (String account) throws SQLException  {
-		List<MemberBean>
-		
-		
-		}
+		MemberBean result = null;
 
 	return result;}
 
@@ -50,32 +48,32 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	public MemberBean select_by_id(String member_Id) throws SQLException {
 		MemberBean result = null;
 
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(SELECT_BY_ID);) {
-			stmt.setString(1, member_Id);
-			try (ResultSet rset = stmt.executeQuery();) {
-				if (rset.next()) {
-					result = new MemberBean();
-					result.setMember_Id(rset.getString("member_Id"));
-					result.setAccount(rset.getString("account"));
-					result.setPswd(rset.getString("pswd"));
-					result.setNick_Name(rset.getString("nick_Name"));
-					result.setBirthday(rset.getDate("birthday"));
-					result.setCellphone(rset.getString("cellphone"));
-					result.setEmail(rset.getString("email"));
-					result.setGender(rset.getString("gender"));
-					// result.setPicture(rset.getBlob("picture"));
-					result.setPicture_Name(rset.getString("picture_Name"));
-					result.setPoints(rset.getInt("points"));
-					result.setTickets(rset.getInt("tickets"));
-					result.setRole_id(rset.getInt("role_id"));
-					result.setCreditCardNo(rset.getString("creditCardNo"));
-					result.setReg_date(rset.getDate("reg_date"));
-					result.setLastLogin(rset.getTimestamp("lastLogin"));
-					result.setLastLogin_Ip(rset.getString("lastLogin_Ip"));
-				}
-			}
-
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(SELECT_BY_ID);) {
+//			stmt.setString(1, member_Id);
+//			try (ResultSet rset = stmt.executeQuery();) {
+//				if (rset.next()) {
+//					result = new MemberBean();
+//					result.setMember_Id(rset.getString("member_Id"));
+//					result.setAccount(rset.getString("account"));
+//					result.setPswd(rset.getString("pswd"));
+//					result.setNick_Name(rset.getString("nick_Name"));
+//					result.setBirthday(rset.getDate("birthday"));
+//					result.setCellphone(rset.getString("cellphone"));
+//					result.setEmail(rset.getString("email"));
+//					result.setGender(rset.getString("gender"));
+//					// result.setPicture(rset.getBlob("picture"));
+//					result.setPicture_Name(rset.getString("picture_Name"));
+//					result.setPoints(rset.getInt("points"));
+//					result.setTickets(rset.getInt("tickets"));
+//					result.setRole_id(rset.getInt("role_id"));
+//					result.setCreditCardNo(rset.getString("creditCardNo"));
+//					result.setReg_date(rset.getDate("reg_date"));
+//					result.setLastLogin(rset.getTimestamp("lastLogin"));
+//					result.setLastLogin_Ip(rset.getString("lastLogin_Ip"));
+//				}
+//			}
+//
+//		}
 
 		return result;
 	}
@@ -94,33 +92,33 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean select_by_email(String email) throws SQLException {
 		MemberBean result = null;
+//
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(SELECT_BY_EMAIL);) {
+//			stmt.setString(1, email);
+//			try (ResultSet rset = stmt.executeQuery();) {
+//				if (rset.next()) {
+//					result = new MemberBean();
+//					result.setMember_Id(rset.getString("member_Id"));
+//					result.setAccount(rset.getString("account"));
+//					result.setPswd(rset.getString("pswd"));
+//					result.setNick_Name(rset.getString("nick_Name"));
+//					result.setBirthday(rset.getDate("birthday"));
+//					result.setCellphone(rset.getString("cellphone"));
+//					result.setEmail(rset.getString("email"));
+//					result.setGender(rset.getString("gender"));
+//					// result.setPicture(rset.getBlob("picture"));
+//					result.setPicture_Name(rset.getString("picture_Name"));
+//					result.setPoints(rset.getInt("points"));
+//					result.setTickets(rset.getInt("tickets"));
+//					result.setRole_id(rset.getInt("role_id"));
+//					result.setCreditCardNo(rset.getString("creditCardNo"));
+//					result.setReg_date(rset.getDate("reg_date"));
+//					result.setLastLogin(rset.getTimestamp("lastLogin"));
+//					result.setLastLogin_Ip(rset.getString("lastLogin_Ip"));
+//				}
+//			}
 
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(SELECT_BY_EMAIL);) {
-			stmt.setString(1, email);
-			try (ResultSet rset = stmt.executeQuery();) {
-				if (rset.next()) {
-					result = new MemberBean();
-					result.setMember_Id(rset.getString("member_Id"));
-					result.setAccount(rset.getString("account"));
-					result.setPswd(rset.getString("pswd"));
-					result.setNick_Name(rset.getString("nick_Name"));
-					result.setBirthday(rset.getDate("birthday"));
-					result.setCellphone(rset.getString("cellphone"));
-					result.setEmail(rset.getString("email"));
-					result.setGender(rset.getString("gender"));
-					// result.setPicture(rset.getBlob("picture"));
-					result.setPicture_Name(rset.getString("picture_Name"));
-					result.setPoints(rset.getInt("points"));
-					result.setTickets(rset.getInt("tickets"));
-					result.setRole_id(rset.getInt("role_id"));
-					result.setCreditCardNo(rset.getString("creditCardNo"));
-					result.setReg_date(rset.getDate("reg_date"));
-					result.setLastLogin(rset.getTimestamp("lastLogin"));
-					result.setLastLogin_Ip(rset.getString("lastLogin_Ip"));
-				}
-			}
-
-		}
+//		}
 
 		return result;
 	}
@@ -140,16 +138,16 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 			throws SQLException {
 		MemberBean result = null;
 
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE);) {
-			stmt.setTimestamp(1, lastLogin);
-			stmt.setString(2, lastLogin_Ip);
-			stmt.setString(3, account);
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select(account);
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE);) {
+//			stmt.setTimestamp(1, lastLogin);
+//			stmt.setString(2, lastLogin_Ip);
+//			stmt.setString(3, account);
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select(account);
+//			}
+//		}
 		return result;
 	}
 
@@ -166,16 +164,16 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean changetickets(String account) throws SQLException {
 		MemberBean result = null;
-
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE1);) {
-
-			stmt.setString(1, account);
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select(account);
-			}
-		}
+//
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE1);) {
+//
+//			stmt.setString(1, account);
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select(account);
+//			}
+//		}
 		return result;
 	}
 
@@ -191,22 +189,22 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean insertMember(MemberBean bean) throws SQLException {
 		MemberBean result = null;
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(INSERT);) {
-			stmt.setString(1, bean.getMember_Id());
-			stmt.setString(2, bean.getAccount());
-			stmt.setString(3, bean.getPswd());
-			stmt.setString(4, bean.getNick_Name());
-			stmt.setDate(5, bean.getBirthday());
-			stmt.setString(6, bean.getCellphone());
-			stmt.setString(7, bean.getGender());
-			stmt.setString(8, bean.getEmail());
-			stmt.setDate(9, bean.getReg_date());
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select(bean.getAccount());
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(INSERT);) {
+//			stmt.setString(1, bean.getMember_Id());
+//			stmt.setString(2, bean.getAccount());
+//			stmt.setString(3, bean.getPswd());
+//			stmt.setString(4, bean.getNick_Name());
+//			stmt.setDate(5, bean.getBirthday());
+//			stmt.setString(6, bean.getCellphone());
+//			stmt.setString(7, bean.getGender());
+//			stmt.setString(8, bean.getEmail());
+//			stmt.setDate(9, bean.getReg_date());
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select(bean.getAccount());
+//			}
+//		}
 		return result;
 	}
 
@@ -222,20 +220,20 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean changeMember(MemberBean bean) throws SQLException {
 		MemberBean result = null;
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE2);) {
-			stmt.setString(1, bean.getEmail());
-			stmt.setString(2, bean.getPswd());
-			stmt.setString(3, bean.getNick_Name());
-			stmt.setDate(4, bean.getBirthday());
-			stmt.setString(5, bean.getCellphone());
-			stmt.setString(6, bean.getGender());
-			stmt.setString(7, bean.getAccount());
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select(bean.getAccount());
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE2);) {
+//			stmt.setString(1, bean.getEmail());
+//			stmt.setString(2, bean.getPswd());
+//			stmt.setString(3, bean.getNick_Name());
+//			stmt.setDate(4, bean.getBirthday());
+//			stmt.setString(5, bean.getCellphone());
+//			stmt.setString(6, bean.getGender());
+//			stmt.setString(7, bean.getAccount());
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select(bean.getAccount());
+//			}
+//		}
 		return result;
 	}
 
@@ -252,15 +250,15 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean changerole_id(String member_Id, int role_id) throws SQLException {
 		MemberBean result = null;
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE3);) {
-			stmt.setInt(1, role_id);
-			stmt.setString(2, member_Id);
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select_by_id(member_Id);
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE3);) {
+//			stmt.setInt(1, role_id);
+//			stmt.setString(2, member_Id);
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select_by_id(member_Id);
+//			}
+//		}
 		return result;
 	}
 
@@ -276,15 +274,15 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean changePswd(String member_Id, String Pswd) throws SQLException {
 		MemberBean result = null;
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE4);) {
-			stmt.setString(1, Pswd);
-			stmt.setString(2, member_Id);
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select_by_id(member_Id);
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE4);) {
+//			stmt.setString(1, Pswd);
+//			stmt.setString(2, member_Id);
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select_by_id(member_Id);
+//			}
+//		}
 		return result;
 	}
 
@@ -300,17 +298,17 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public List<Integer> select_permission(int role_id) throws SQLException {
 		List<Integer> list = new ArrayList<>();
-
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(select_permission);) {
-			stmt.setInt(1, role_id);
-			try (ResultSet rset = stmt.executeQuery();) {
-				while (rset.next()) {
-
-					int permission = rset.getInt("permission");
-					list.add(permission);
-				}
-			}
-		}
+//
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(select_permission);) {
+//			stmt.setInt(1, role_id);
+//			try (ResultSet rset = stmt.executeQuery();) {
+//				while (rset.next()) {
+//
+//					int permission = rset.getInt("permission");
+//					list.add(permission);
+//				}
+//			}
+//		}
 		return list;
 	}
 
@@ -325,15 +323,15 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public String select_role_Name(int role_id) throws SQLException {
 		String role_Name = null;
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(select_role_Name);) {
-			stmt.setInt(1, role_id);
-			try (ResultSet rset = stmt.executeQuery();) {
-				if (rset.next()) {
-					role_Name = rset.getString("role_Name");
-
-				}
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(select_role_Name);) {
+//			stmt.setInt(1, role_id);
+//			try (ResultSet rset = stmt.executeQuery();) {
+//				if (rset.next()) {
+//					role_Name = rset.getString("role_Name");
+//
+//				}
+//			}
+//		}
 		return role_Name;
 	}
 
@@ -350,16 +348,16 @@ public class MemberDAO extends GenericDaoJdbc<MemberBean> implements IMemberDao 
 	@Override
 	public MemberBean changePicture(InputStream picture, String picture_Name, String member_Id) throws SQLException {
 		MemberBean result = null;
-		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE6);) {
-			stmt.setBinaryStream(1, picture);
-			stmt.setString(2, picture_Name);
-			stmt.setString(3, member_Id);
-
-			int i = stmt.executeUpdate();
-			if (i == 1) {
-				result = this.select_by_id(member_Id);
-			}
-		}
+//		try (Connection conn = ds.getConnection(); PreparedStatement stmt = conn.prepareStatement(UPDATE6);) {
+//			stmt.setBinaryStream(1, picture);
+//			stmt.setString(2, picture_Name);
+//			stmt.setString(3, member_Id);
+//
+//			int i = stmt.executeUpdate();
+//			if (i == 1) {
+//				result = this.select_by_id(member_Id);
+//			}
+//		}
 		return result;
 	}
 

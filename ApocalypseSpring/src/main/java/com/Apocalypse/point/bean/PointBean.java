@@ -1,42 +1,42 @@
-package com.Apocalypse.product;
+package com.Apocalypse.point.bean;
 
 import java.sql.Blob;
 
-public class ProductBean {
+public class PointBean {
 
-	private Integer productId;
-	private String producName;
+	private Integer pointId;
+	private String pointName;
 	private Integer price;
 	private String productDesc;
 	private Blob productPicture;
 	
-	public ProductBean() {
+	public PointBean() {
 		
 	}
 
-	public ProductBean(Integer productId, String producName, Integer  price, String productDesc) {
+	public PointBean(Integer pointId, String pointName, Integer  price, String productDesc) {
 		
-		this.productId = productId;
-		this.producName = producName;
+		this.pointId = pointId;
+		this.pointName = pointName;
 		this.price = price;
 		this.productDesc = productDesc;
 		
 	}
 
-	public int getProductId() {
-		return productId;
+	public int getpointId() {
+		return pointId;
 	}
 
-	public void setProductId(Integer  productId) {
-		this.productId = productId;
+	public void setpointId(Integer  pointId) {
+		this.pointId = pointId;
 	}
 
-	public String getProducName() {
-		return producName;
+	public String getpointName() {
+		return pointName;
 	}
 
-	public void setProducName(String producName) {
-		this.producName = producName;
+	public void setpointName(String pointName) {
+		this.pointName = pointName;
 	}
 
 	public int getPrice() {

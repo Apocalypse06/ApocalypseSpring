@@ -1,9 +1,11 @@
-package com.Apocalypse.member;
+package com.Apocalypse.member.service;
 
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
+
+import com.Apocalypse.member.bean.MemberBean;
 
 public interface IMemberService {
 

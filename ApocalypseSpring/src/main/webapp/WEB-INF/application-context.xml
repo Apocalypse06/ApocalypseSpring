@@ -15,10 +15,7 @@
 
 	<context:component-scan base-package="com.Apocalypse" />
 	<context:annotation-config></context:annotation-config>
-
-	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
-	<!-- <property name="jndiName" value="java:comp/env/jdbc/iread"></property> -->
-	<!-- </bean> -->
+	
 	 <context:property-placeholder location="classpath:jdbc.properties"/>
 							<!-- dbcp2 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
@@ -46,6 +43,9 @@
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" >
 		</property>
+		<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+	<!-- <property name="jndiName" value="java:comp/env/jdbc/iread"></property> -->
+	<!-- </bean> -->
 	</bean>
 
 

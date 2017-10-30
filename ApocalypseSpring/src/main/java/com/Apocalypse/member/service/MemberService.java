@@ -1,4 +1,4 @@
-package com.Apocalypse.member;
+package com.Apocalypse.member.service;
 
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -6,6 +6,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import com.Apocalypse.member.bean.MemberBean;
+import com.Apocalypse.member.dao.IMemberDao;
+import com.Apocalypse.member.dao.MemberDAO;
 
 
 
