@@ -6,28 +6,30 @@ import java.util.List;
 
 public interface IMemberDao {
 
-	MemberBean select(String account) throws SQLException;
+	
 
-	MemberBean select_by_id(String member_Id) throws SQLException;
+	public MemberBean select(String account) throws SQLException;
 
-	MemberBean select_by_email(String email) throws SQLException;
+	public MemberBean select_by_id(String memberId) throws SQLException;
 
-	MemberBean changeLastLogin(String account, java.sql.Timestamp lastLogin, String lastLogin_Ip) throws SQLException;
+	public MemberBean select_by_email(String email) throws SQLException;
 
-	MemberBean changetickets(String account) throws SQLException;
+	public MemberBean changeLastLogin(String account, java.sql.Timestamp lastLogin, String lastLoginIp) throws SQLException;
 
-	MemberBean insertMember(MemberBean bean) throws SQLException;
+	public MemberBean changetickets(String account) throws SQLException;
 
-	MemberBean changeMember(MemberBean bean) throws SQLException;
+	public MemberBean insertMember(MemberBean bean) throws SQLException;
 
-	MemberBean changerole_id(String member_Id, int role_id) throws SQLException;
+	public MemberBean changeMember(MemberBean bean) throws SQLException;
 
-	MemberBean changePswd(String member_Id, String Pswd) throws SQLException;
+	public MemberBean changerole_id(String memberId, int roleid) throws SQLException;
 
-	List<Integer> select_permission(int role_id) throws SQLException;
+	public MemberBean changePswd(String memberId, String Pswd) throws SQLException;
 
-	String select_role_Name(int role_id) throws SQLException;
+	public List<Integer> select_permission(int roleId) throws SQLException;
 
-	MemberBean changePicture(InputStream picture, String picture_Name, String member_Id) throws SQLException;
+	public String select_role_Name(int roleId) throws SQLException;
+
+	public MemberBean changePicture(InputStream picture, String pictureName, String memberId) throws SQLException;
 
 }

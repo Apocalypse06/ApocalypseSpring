@@ -1,8 +1,8 @@
-package com.Apocalypse.product;
+package com.Apocalypse.point;
 
 import java.sql.Blob;
 
-public class ProductBean {
+public class PointBean {
 
 	private Integer productId;
 	private String producName;
@@ -10,11 +10,11 @@ public class ProductBean {
 	private String productDesc;
 	private Blob productPicture;
 	
-	public ProductBean() {
+	public PointBean() {
 		
 	}
 
-	public ProductBean(Integer productId, String producName, Integer  price, String productDesc) {
+	public PointBean(Integer productId, String producName, Integer  price, String productDesc) {
 		
 		this.productId = productId;
 		this.producName = producName;

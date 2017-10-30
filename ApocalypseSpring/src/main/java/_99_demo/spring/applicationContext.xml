@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<context:component-scan base-package="_99_demo\spring\anno,_99_demo\spring\p4"></context:component-scan>
+	
+	
+	
+	<bean id='ca' class='_99_demo.spring.xml.ClassA'>
+		<!-- <property name="objB" ref="cb"></property> -->
+		<constructor-arg ref="cb"></constructor-arg>
+	</bean>
+	<bean id='cb' class='_99_demo.spring.xml.p2.ClassB' scope="prototype">
+		<!-- <property name="objC" ref='cc'></property> -->
+		<constructor-arg ref="cc"></constructor-arg>
+	</bean>
+
+	<bean id='cc' class='_99_demo.spring.xml.p3.ClassC'>
+
+	</bean>
+</beans>

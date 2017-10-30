@@ -1,4 +1,4 @@
-package com.Apocalypse.product;
+package com.Apocalypse.point;
 
 import java.sql.Timestamp;
 

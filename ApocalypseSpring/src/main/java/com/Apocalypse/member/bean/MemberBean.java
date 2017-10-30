@@ -1,4 +1,4 @@
-package com.Apocalypse.member;
+package com.Apocalypse.member.bean;
 
 import java.io.Serializable;
 import java.sql.Blob;
@@ -8,7 +8,7 @@ import java.sql.Date;
 public class MemberBean implements Serializable{
       
 	private static final long serialVersionUID = 1L;
-	private String memberId;   					//流水號主鍵
+	private String member_Id;   					//流水號主鍵
 	private String account;							//帳號 這裡是Email
 	private String pswd;   			   			 	//密碼
 	private String nick_Name;           			//暱稱
@@ -34,7 +34,7 @@ public class MemberBean implements Serializable{
  
 	@Override
 	public String toString() {
-		return "MemberBean [member_Id=" + memberId + ", account=" + account + ", pswd=" + pswd + ", nick_Name="
+		return "MemberBean [member_Id=" + member_Id + ", account=" + account + ", pswd=" + pswd + ", nick_Name="
 				+ nick_Name + ", birthday=" + birthday + ", cellphone=" + cellphone + ", email=" + email + ", gender="
 				+ gender + ", picture_Name=" + picture_Name + ", points=" + points + ", tickets=" + tickets
 				+ ", role_id=" + role_id + ", creditCardNo=" + creditCardNo + ", reg_date=" + reg_date + ", lastLogin="
@@ -45,10 +45,10 @@ public class MemberBean implements Serializable{
 
 
 
-	public MemberBean(String memberId, String account, String pswd, String nick_Name, Date birthday, String cellphone,
+	public MemberBean(String member_Id, String account, String pswd, String nick_Name, Date birthday, String cellphone,
 			String email, String gender, Date reg_date) {
 		super();
-		this.memberId = memberId;
+		this.member_Id = member_Id;
 		this.account = account;
 		this.pswd = pswd;
 		this.nick_Name = nick_Name;
@@ -61,11 +61,11 @@ public class MemberBean implements Serializable{
 
 
 
-	public MemberBean(String memberId, String account, String pswd, String nick_Name, Date birthday, String cellphone,
+	public MemberBean(String member_Id, String account, String pswd, String nick_Name, Date birthday, String cellphone,
 			String email, String gender, String picture_Name, int points, int tickets, int role_id,
 			String creditCardNo, Date reg_date, Timestamp lastLogin, String lastLogin_Ip) {
 		super();
-		this.memberId = memberId;
+		this.member_Id = member_Id;
 		this.account = account;
 		this.pswd = pswd;
 		this.nick_Name = nick_Name;
@@ -86,13 +86,13 @@ public class MemberBean implements Serializable{
 
 
 	public String getMember_Id() {
-		return memberId;
+		return member_Id;
 	}
 
 
 
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setMember_Id(String member_Id) {
+		this.member_Id = member_Id;
 	}
 
 
