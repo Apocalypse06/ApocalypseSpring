@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.util.Assert;
 
 import com.Apocalypse.core.bean.CommonConstant;
-import com.Apocalypse.member.MemberBean;
+import com.Apocalypse.member.bean.MemberBean;
 
 public class BaseController {
 	protected  static final String ERROR_MSG="errorMsg";

@@ -1,6 +1,7 @@
 package com.Apocalypse.point.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -11,14 +12,15 @@ public class PointDaoSpring extends GenericDaoJdbc<PointBean>implements IPointDa
 
 	@Override
 	public PointBean getPointById(int pointId) throws Exception {
-		
 		return null;
 	}
 
 	@Override
-	public List<PointBean> getPoint() throws Exception {
-		
-		return null;
+	public List<Map<String,Object>> getPoint() throws Exception {
+		String sql ="select * from point";
+		List<Map<String, Object>> result=getJdbcTemplate().queryForList(sql);
+		System.out.println(result);
+		return result;
 	}
 
 	@Override
